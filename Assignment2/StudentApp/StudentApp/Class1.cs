@@ -23,6 +23,23 @@ namespace StudentApp
         public int EnrollmentYear { get; set; }
         public string GraduationDate { get; set; }
 
+        public Student()
+        {
+            FirstName = "";
+            LastName = "";
+            ID = "";
+            Address = "";
+            Email = "";
+            PhoneNumber = "";
+            DOB = "";
+            Gender = "";
+            LearningDisabilities = "";
+            GPA = "";
+            Department = "";
+            EnrollmentYear = 0;
+            GraduationDate = "";
+        }
+
         public Student(string firstName, string lastName, string iD, string address, string email, string phoneNumber, string dOB, 
                        string gender, string learningDisabilities, string gPA, string department, int enrollmentYear, string graduationDate)
         {

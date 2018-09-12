@@ -6,7 +6,29 @@
         xmlns:local="clr-namespace:StudentApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Margin="0,0,14.6,0">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name ="Submit_Button" Content="Submit" HorizontalAlignment="Left" VerticalAlignment="Center" Width="75" Grid.Column="4" Grid.Row="4"/>
+        <Button x:Name ="Clear_Button" Content="Clear" HorizontalAlignment="Right" VerticalAlignment="Center" Width="75" Grid.Column="4" Grid.Row="4"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" Width="153" Grid.Column="1" Margin="0,26,0,0" Grid.Row="1"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top" Width="153" Grid.Column="1" Grid.Row="2" Margin="0,2,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="User ID" VerticalAlignment="Top" Width="153" Grid.Column="1" Grid.Row="2" Margin="0,59,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Email Address" VerticalAlignment="Top" Width="153" Grid.Column="1" Grid.Row="3" Margin="0,33,0,0"/>
+
+
+
     </Grid>
 </Window>
