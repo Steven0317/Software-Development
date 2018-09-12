@@ -18,8 +18,13 @@ namespace StudentApp
         public string Gender { get; set; }
         public string LearningDisabilities { get; set; }
 
-        public Student(string firstName, string lastName, string iD, string address, 
-                       string email, string phoneNumber, string dOB, string gender, string learningDisabilities)
+        public string GPA { get; set; }
+        public string Department { get; set; }
+        public int EnrollmentYear { get; set; }
+        public string GraduationDate { get; set; }
+
+        public Student(string firstName, string lastName, string iD, string address, string email, string phoneNumber, string dOB, 
+                       string gender, string learningDisabilities, string gPA, string department, int enrollmentYear, string graduationDate)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -30,6 +35,10 @@ namespace StudentApp
             DOB = dOB;
             Gender = gender;
             LearningDisabilities = learningDisabilities;
+            GPA = gPA;
+            Department = department;
+            EnrollmentYear = enrollmentYear;
+            GraduationDate = graduationDate;
         }
     }
 }

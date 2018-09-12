@@ -1,0 +1,15 @@
+C:\Users\sfaul\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\StudentApp\obj\Debug\StudentApp.csprojAssemblyReference.cache
+C:\Users\sfaul\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\StudentApp\obj\Debug\MainWindow.g.cs
+C:\Users\sfaul\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\StudentApp\obj\Debug\App.g.cs
+C:\Users\sfaul\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\StudentApp\obj\Debug\StudentApp_MarkupCompile.cache
+C:\Users\sfaul\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\StudentApp\obj\Debug\StudentApp_MarkupCompile.lref
+C:\Users\sfaul\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\StudentApp\bin\Debug\StudentApp.exe.config
+C:\Users\sfaul\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\StudentApp\bin\Debug\StudentApp.exe
+C:\Users\sfaul\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\StudentApp\bin\Debug\StudentApp.pdb
+C:\Users\sfaul\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\StudentApp\obj\Debug\MainWindow.baml
+C:\Users\sfaul\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\StudentApp\obj\Debug\StudentApp.g.resources
+C:\Users\sfaul\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\StudentApp\obj\Debug\StudentApp.Properties.Resources.resources
+C:\Users\sfaul\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\StudentApp\obj\Debug\StudentApp.csproj.GenerateResource.cache
+C:\Users\sfaul\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\StudentApp\obj\Debug\StudentApp.csproj.CoreCompileInputs.cache
+C:\Users\sfaul\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\StudentApp\obj\Debug\StudentApp.exe
+C:\Users\sfaul\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\StudentApp\obj\Debug\StudentApp.pdb
