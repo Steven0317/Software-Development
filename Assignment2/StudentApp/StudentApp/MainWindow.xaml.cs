@@ -24,5 +24,15 @@ namespace StudentApp
         {
             InitializeComponent();
         }
+
+        public MainWindow(Button submit_Button, Button clear_Button, bool contentLoaded)
+        {
+            Submit_Button = submit_Button;
+            Clear_Button = clear_Button;
+            _contentLoaded = contentLoaded;
+        }
+
+
+
     }
 }
