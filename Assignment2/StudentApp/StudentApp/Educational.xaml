@@ -58,6 +58,8 @@
 
         </ComboBox>
 
+        <Label x:Name="error" HorizontalAlignment="Center"  VerticalAlignment="Center" Grid.Column="2" Grid.ColumnSpan="5"/>
+
         <TextBox x:Name="day" TextAlignment="Center"  BorderThickness="0,0,0,1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="auto" Grid.Column="4" Grid.Row="3" Text="Day" Background="White"  Opacity="0.75" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll"/>
 
         <TextBox x:Name="year" TextAlignment="Center" Grid.ColumnSpan="2"  BorderThickness="0,0,0,1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="auto" Grid.Column="5" Grid.Row="3" Text="Year" Background="White"  Opacity="0.75" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll"/>
@@ -83,7 +85,8 @@
 
 
 
-        <Button x:Name ="Submit_Button"  Content="Submit" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="3"  Height="26" Background="#FF0078D7"  Opacity="0.75" BorderBrush="#FF0078D7" Foreground="White" />
+        <Button x:Name ="Submit_Button"  Content="Submit" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="3"  Height="26" Background="#FF0078D7"  Opacity="0.75" BorderBrush="#FF0078D7" Foreground="White" IsDefault="True" Click="Button_Click" />
+        
 
 
 

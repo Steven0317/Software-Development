@@ -16,6 +16,7 @@ namespace StudentApp
         public string PhoneNumber { get; set; }
         public string DOB { get; set; }
         public string Gender { get; set; }
+        public string Race { get; set; }
         public string LearningDisabilities { get; set; }
 
         public string GPA { get; set; }
@@ -41,7 +42,7 @@ namespace StudentApp
         }
 
         public Student(string firstName, string lastName, string iD, string address, string email, string phoneNumber, string dOB, 
-                       string gender, string learningDisabilities, string gPA, string department, int enrollmentYear, string graduationDate)
+                       string gender, string race, string learningDisabilities, string gPA, string department, int enrollmentYear, string graduationDate)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -51,6 +52,7 @@ namespace StudentApp
             PhoneNumber = phoneNumber;
             DOB = dOB;
             Gender = gender;
+            Race = race;
             LearningDisabilities = learningDisabilities;
             GPA = gPA;
             Department = department;
