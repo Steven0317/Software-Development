@@ -13,3 +13,5 @@ C:\Users\sfaul\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\S
 C:\Users\sfaul\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\StudentApp\obj\Debug\StudentApp.csproj.CoreCompileInputs.cache
 C:\Users\sfaul\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\StudentApp\obj\Debug\StudentApp.exe
 C:\Users\sfaul\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\StudentApp\obj\Debug\StudentApp.pdb
+C:\Users\sfaul\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\StudentApp\obj\Debug\Educational.g.cs
+C:\Users\sfaul\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\StudentApp\obj\Debug\Educational.baml

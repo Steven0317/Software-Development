@@ -7,58 +7,6 @@
         mc:Ignorable="d"
         Title="Student App" Height="350" Width="600">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <Button x:Name ="Submit_Button" Content="Submit" HorizontalAlignment="Left" VerticalAlignment="Center" Width="60" Grid.Column="3" Grid.Row="6"/>
-        <Button x:Name ="Clear_Button" Content="Clear" HorizontalAlignment="Right" VerticalAlignment="Center" Width="60" Grid.Column="4" Grid.Row="6"/>
-        
-        <TextBox x:Name="FNBox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="auto"  Grid.Column="2" Grid.Row="1" />
-        <Label Content="First Name: " Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3" Margin="74,8.4,74.2,12.2" />
-        
-        <TextBox x:Name="LNBox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="auto" Grid.Column="2" Grid.Row="2" />
-        <Label Content="Last Name: " Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3" Margin="74,8.8,74.2,12.2" />
-        
-        <TextBox x:Name="uID" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="auto" Grid.Column="2" Grid.Row="3"/>
-        <Label Content="User ID: " Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3" Margin="74,8.2,74.2,12.2" />
-
-        <TextBox x:Name="email" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="auto" Grid.Column="2" Grid.Row="4"/>
-        <Label Content="Email: " Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3" Margin="74,8.2,74.2,12.2" />
-
-        <TextBox x:Name="address" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="auto" Grid.Column="2" Grid.Row="5"/>
-        <Label Content="Street Addr: " Grid.Row="5" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.ColumnSpan="3" Margin="74,8.2,74.2,12.2" />
-
-        <TextBox x:Name="gender" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="auto" Grid.Column="5" Grid.Row="1"/>
-        <Label Content="Gender: " Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Grid.ColumnSpan="2" Margin="69.2,8.4,4.6,12.2"/>
-
-        <TextBox x:Name="race" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="auto" Grid.Column="5" Grid.Row="2"/>
-        <Label Content="Race: " Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Grid.ColumnSpan="2" Margin="69.2,8.4,4.6,12.2"/>
-
-        <TextBox x:Name="number" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="auto" Grid.Column="5" Grid.Row="3"/>
-        <Label Content="Telephone: " Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Grid.ColumnSpan="2" Margin="69.2,8.4,4.6,12.2"/>
-
-        <TextBox x:Name="dob" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="auto" Grid.Column="5" Grid.Row="4"/>
-        <Label Content="D.O.B: " Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Grid.ColumnSpan="2" Margin="69.2,8.4,4.6,12.2"/>
-
-        <TextBox x:Name="Disabilites" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="auto" Grid.Column="5" Grid.Row="5"/>
-        <Label Content="Disabilites: " Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Grid.ColumnSpan="2" Margin="69.2,8.4,4.6,12.2"/>
-
-
+        <Frame Source="/Educational.xaml" />
     </Grid>
 </Window>
