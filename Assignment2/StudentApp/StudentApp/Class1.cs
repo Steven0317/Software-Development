@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace StudentApp
 {
-    class Student
+    public class Student
     {
+
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string ID { get; set; }
@@ -19,10 +20,10 @@ namespace StudentApp
         public string Race { get; set; }
         public string LearningDisabilities { get; set; }
 
-        public string GPA { get; set; }
+        public double GPA { get; set; }
         public string Department { get; set; }
         public int EnrollmentYear { get; set; }
-        public string GraduationDate { get; set; }
+        public int GraduationDate { get; set; }
 
         public Student()
         {
@@ -35,14 +36,14 @@ namespace StudentApp
             DOB = "";
             Gender = "";
             LearningDisabilities = "";
-            GPA = "";
+            GPA = 0;
             Department = "";
             EnrollmentYear = 0;
-            GraduationDate = "";
+            GraduationDate = 0;
         }
 
         public Student(string firstName, string lastName, string iD, string address, string email, string phoneNumber, string dOB, 
-                       string gender, string race, string learningDisabilities, string gPA, string department, int enrollmentYear, string graduationDate)
+                       string gender, string race, string learningDisabilities, double gPA, string department, int enrollmentYear, int graduationDate)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -58,6 +59,13 @@ namespace StudentApp
             Department = department;
             EnrollmentYear = enrollmentYear;
             GraduationDate = graduationDate;
+        }
+
+
+        public override string ToString()
+        {
+            return string.Format("{0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}",
+                    this.FirstName, this.LastName, this.ID, this.Address, this.Email, this.PhoneNumber, this.DOB, this.Gender, this.Race, this.LearningDisabilities, this.GPA, this.GraduationDate );
         }
     }
 }

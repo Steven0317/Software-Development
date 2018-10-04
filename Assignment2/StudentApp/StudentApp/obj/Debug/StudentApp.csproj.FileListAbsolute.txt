@@ -32,3 +32,11 @@ C:\Users\Steven\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\
 C:\Users\Steven\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\StudentApp\obj\Debug\StudentApp.csproj.CoreCompileInputs.cache
 C:\Users\Steven\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\StudentApp\obj\Debug\StudentApp.exe
 C:\Users\Steven\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\StudentApp\obj\Debug\StudentApp.pdb
+C:\Users\Steven\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\StudentApp\obj\Debug\SchoolInfo.g.cs
+C:\Users\Steven\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\StudentApp\obj\Debug\SchoolInfo.baml
+C:\Users\Steven\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\StudentApp\obj\Debug\HomePage.g.cs
+C:\Users\Steven\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\StudentApp\obj\Debug\HomePage.baml
+C:\Users\Steven\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\StudentApp\obj\Debug\Delete.g.cs
+C:\Users\Steven\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\StudentApp\obj\Debug\Search.g.cs
+C:\Users\Steven\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\StudentApp\obj\Debug\Delete.baml
+C:\Users\Steven\Desktop\Projects\C#\Software-Development\Assignment2\StudentApp\StudentApp\obj\Debug\Search.baml

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,13 +21,16 @@ namespace StudentApp
     /// </summary>
     public partial class Educational : Page
     {
-        List<Student> ListOfStudents = new List<Student>();
+
+        public static List<Student> Students = new List<Student>();
+        
+
         public Educational()
         {
             InitializeComponent();
             
         }
-
+        //removes default text on focus
         private void SelectAll(object sender, RoutedEventArgs e)
         {
             TextBox tb = (sender as TextBox);
@@ -34,106 +38,198 @@ namespace StudentApp
             if (tb != null)
             {
                 tb.Foreground = Brushes.Black;
+                tb.BorderBrush = Brushes.Black;
                 tb.Text="";
+                tb.SelectionStart = 1;
             }
         }
-
+        //validates input boxes pushes to list and pushes new frame into focus
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if(FNBox.Text == "" || FNBox.Text =="First Name")
-            {
-                FNBox.Text = "First Name";
-                FNBox.Foreground = Brushes.Red;
-                error.Foreground = Brushes.Red;
-                error.Content = "Please fix all red fields";
 
-            }
-            if (LNBox.Text == "" || LNBox.Text == "Last Name")
+            if (ValidateAll())
             {
-                LNBox.Text = "Last Name";
-                LNBox.Foreground = Brushes.Red;
-                error.Foreground = Brushes.Red;
-                error.Content = "Please fix all red fields";
+                Student tempStudent = new Student(FNBox.Text, LNBox.Text, uID.Text, address.Text, email.Text,number.Text,
+                                                  month.Text + ", " + day.Text + ", " + year.Text, gender.Text, race.Text,
+                                                  Disabilites.Text, 0, "", 0, 0);
+
+                Students.Add(tempStudent);
+                error.Visibility = Visibility.Hidden;
+                
+
+                NavigationService.Navigate(new Uri("SchoolInfo.xaml", UriKind.Relative));
+                
             }
-            if (email.Text == "" || email.Text == "Email Address")
+           
+        }
+
+
+        
+        //even larger bool validation for input boxes
+        //can do better with bindings
+        private bool ValidateAll()
+        {
+            bool fnValid;
+            bool lnValid;
+            bool IdValid;
+            bool addressValid;
+            bool emailValid;
+            bool phoneValid;
+            bool dobValid;
+            bool raceValid;
+            bool disablitiesValid;
+            bool genderValid;
+
+            if(string.IsNullOrWhiteSpace(FNBox.Text) || FNBox.Text == FNBox.Tag.ToString())
             {
-                email.Text = "Email Address";
-                email.Foreground = Brushes.Red;
-                error.Foreground = Brushes.Red;
-                error.Content = "Please fix all red fields";
-            }
-            if (Month.Text == "       Birth Month")
-            {
-                Month.Text = "       Birth Month";
-                Month.Foreground = Brushes.Red;
-                error.Foreground = Brushes.Red;
-                error.Content = "Please fix all red fields";
-            }
-            if (day.Text == "" || day.Text == "Day")
-            {
-                day.Text = "Day";
-                day.Foreground = Brushes.Red;
-                error.Foreground = Brushes.Red;
-                error.Content = "Please fix all red fields";
-            }
-            if (year.Text == "" || year.Text == "Year")
-            {
-                year.Text = "Year";
-                year.Foreground = Brushes.Red;
-                error.Foreground = Brushes.Red;
-                error.Content = "Please fix all red fields";
-            }
-            if (gender.Text == "" || gender.Text == "Gender")
-            {
-                gender.Text = "Gender";
-                gender.Foreground = Brushes.Red;
-                error.Foreground = Brushes.Red;
-                error.Content = "Please fix all red fields";
-            }
-            if (race.Text == "" || race.Text == "Race")
-            {
-                race.Text = "Race";
-                race.Foreground = Brushes.Red;
-                error.Foreground = Brushes.Red;
-                error.Content = "Please fix all red fields";
-            }
-            if (uID.Text == "" || uID.Text == "User ID")
-            {
-                uID.Text = "User ID";
-                uID.Foreground = Brushes.Red;
-                error.Foreground = Brushes.Red;
-                error.Content = "Please fix all red fields";
-            }
-            if (Disabilites.Text == "" || Disabilites.Text == "Learning Disabilites")
-            {
-                Disabilites.Text = "Learning Disabilites";
-                Disabilites.Foreground = Brushes.Red;
-                error.Foreground = Brushes.Red;
-                error.Content = "Please fix all red fields";
-            }
-            if (address.Text == "" || address.Text == "Street Address")
-            {
-                address.Text = "Street Address";
-                address.Foreground = Brushes.Red;
-                error.Foreground = Brushes.Red;
-                error.Content = "Please fix all red fields";
-            }
-            if (number.Text == "" || number.Text == "Telephone Number" )
-            {
-                number.Text = "Telephone Number";
-                number.Foreground = Brushes.Red;
-                error.Foreground = Brushes.Red;
-                error.Content = "Please fix all red fields";
+                fnValid = false;
+                FNBox.Background = Brushes.Coral;
+                error.Visibility = Visibility.Visible;
             }
             else
             {
-                Student tempStudent = new Student(FNBox.Text, LNBox.Text, uID.Text, address.Text, email.Text, number.Text,
-                                                  Month.Text + " " + day.Text + " " + year.Text, gender.Text, race.Text, 
-                                                  Disabilites.Text, "","",0,"");
-
-                ListOfStudents.Add(tempStudent);
-
+                fnValid = true;
+                FNBox.Background = Brushes.White;
+               
             }
+            if (string.IsNullOrWhiteSpace(LNBox.Text) || LNBox.Text == LNBox.Tag.ToString())
+            {
+                lnValid = false;
+                LNBox.Background = Brushes.Coral;
+                error.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                lnValid = true;
+                LNBox.Background = Brushes.White;
+                
+            }
+            if (string.IsNullOrWhiteSpace(uID.Text) || uID.Text == uID.Tag.ToString())
+            {
+                IdValid = false;
+                uID.Background = Brushes.Coral;
+                error.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                IdValid = true;
+                uID.Background = Brushes.White;
+            }
+            if (string.IsNullOrWhiteSpace(address.Text) || address.Text == address.Tag.ToString())
+            {
+                addressValid = false;
+                address.Background = Brushes.Coral;
+                error.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                addressValid = true;
+                address.Background = Brushes.White;
+            }
+            if (string.IsNullOrWhiteSpace(email.Text) || email.Text == email.Tag.ToString())
+            {
+                emailValid = false;
+                email.Background = Brushes.Coral;
+                error.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                emailValid = true;
+                email.Background = Brushes.White;
+            }
+            if (string.IsNullOrWhiteSpace(number.Text) || number.Text == number.Tag.ToString())
+            {
+                phoneValid = false;
+                number.Background = Brushes.Coral;
+                error.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                phoneValid = true;
+                number.Background = Brushes.White;
+            }
+            if (string.IsNullOrWhiteSpace(month.Text) || month.Text == month.Tag.ToString())
+            {
+                dobValid = false;
+                month.Background = Brushes.Coral;
+                error.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                dobValid = true;
+                month.Background = Brushes.White;
+            }
+            if (string.IsNullOrWhiteSpace(day.Text) || day.Text == day.Tag.ToString())
+            {
+                dobValid = false;
+                day.Background = Brushes.Coral;
+                error.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                dobValid = true;
+                day.Background = Brushes.White;
+            }
+            if (string.IsNullOrWhiteSpace(year.Text) || year.Text == year.Tag.ToString())
+            {
+                dobValid = false;
+                year.Background = Brushes.Coral;
+                error.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                dobValid = true;
+                year.Background = Brushes.White;
+            }
+            if (string.IsNullOrWhiteSpace(gender.Text) || gender.Text == gender.Tag.ToString())
+            {
+                genderValid = false;
+                gender.Background = Brushes.Coral;
+                error.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                genderValid = true;
+                gender.Background = Brushes.White;
+            }
+            if (string.IsNullOrWhiteSpace(race.Text) || race.Text == race.Tag.ToString())
+            {
+                raceValid = false;
+                race.Background = Brushes.Coral;
+                error.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                raceValid = true;
+                race.Background = Brushes.White;
+            }
+            if (string.IsNullOrWhiteSpace(Disabilites.Text) || Disabilites.Text == Disabilites.Tag.ToString())
+            {
+                disablitiesValid = false;
+                Disabilites.Background = Brushes.Coral;
+                error.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                disablitiesValid = true;
+                Disabilites.Background = Brushes.White;
+            }
+
+
+            return (fnValid && lnValid && IdValid && addressValid && emailValid && phoneValid && dobValid && raceValid && disablitiesValid && genderValid);
+            
+        }
+
+        //replaces default text on lost focus if null
+        private void LoseFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (sender as TextBox);
+
+            if (string.IsNullOrWhiteSpace(tb.Text))
+            {
+                tb.Text = tb.Tag.ToString();
+            }
+
         }
     }
 }

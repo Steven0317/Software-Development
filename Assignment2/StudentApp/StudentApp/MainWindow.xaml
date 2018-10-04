@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:StudentApp"
         mc:Ignorable="d"
         Title="Student App" Height="350" Width="600">
+
     <Grid>
-        <Frame Source="/Educational.xaml" />
+        <Frame Source="/HomePage.xaml"   NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>
