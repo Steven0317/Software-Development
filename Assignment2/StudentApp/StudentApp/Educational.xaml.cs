@@ -80,74 +80,35 @@ namespace StudentApp
             bool disablitiesValid;
             bool genderValid;
 
-            if(string.IsNullOrWhiteSpace(FNBox.Text) || FNBox.Text == FNBox.Tag.ToString())
-            {
-                fnValid = false;
-                FNBox.Background = Brushes.Coral;
-                error.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                fnValid = true;
-                FNBox.Background = Brushes.White;
-               
-            }
-            if (string.IsNullOrWhiteSpace(LNBox.Text) || LNBox.Text == LNBox.Tag.ToString())
-            {
-                lnValid = false;
-                LNBox.Background = Brushes.Coral;
-                error.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                lnValid = true;
-                LNBox.Background = Brushes.White;
-                
-            }
-            if (string.IsNullOrWhiteSpace(uID.Text) || uID.Text == uID.Tag.ToString())
-            {
-                IdValid = false;
-                uID.Background = Brushes.Coral;
-                error.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                IdValid = true;
-                uID.Background = Brushes.White;
-            }
-            if (string.IsNullOrWhiteSpace(address.Text) || address.Text == address.Tag.ToString())
-            {
-                addressValid = false;
-                address.Background = Brushes.Coral;
-                error.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                addressValid = true;
-                address.Background = Brushes.White;
-            }
-            if (string.IsNullOrWhiteSpace(email.Text) || email.Text == email.Tag.ToString())
-            {
-                emailValid = false;
-                email.Background = Brushes.Coral;
-                error.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                emailValid = true;
-                email.Background = Brushes.White;
-            }
-            if (string.IsNullOrWhiteSpace(number.Text) || number.Text == number.Tag.ToString())
-            {
-                phoneValid = false;
-                number.Background = Brushes.Coral;
-                error.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                phoneValid = true;
-                number.Background = Brushes.White;
-            }
+
+
+            fnValid = string.IsNullOrWhiteSpace(FNBox.Text) || FNBox.Text == FNBox.Tag.ToString() ? false : ValidateLetter(FNBox.Text);
+            FNBox.Background = fnValid ? Brushes.White : Brushes.Coral;
+            error.Visibility = fnValid ? Visibility.Hidden : Visibility.Visible;
+
+            lnValid = string.IsNullOrWhiteSpace(LNBox.Text) || LNBox.Text == LNBox.Tag.ToString() ? false : ValidateLetter(LNBox.Text);
+            LNBox.Background = lnValid ? Brushes.White : Brushes.Coral;
+            error.Visibility = lnValid ? Visibility.Hidden : Visibility.Visible;
+
+
+            IdValid = string.IsNullOrWhiteSpace(uID.Text) || uID.Text == uID.Tag.ToString() ? false : ValidateDigit(uID.Text,  uID.MaxLength);
+            uID.Background = IdValid ? Brushes.White : Brushes.Coral;
+            error.Visibility = IdValid ? Visibility.Hidden : Visibility.Visible;
+
+
+            addressValid = (string.IsNullOrWhiteSpace(address.Text) || address.Text == address.Tag.ToString()) ? false : true;
+            address.Background = addressValid ? Brushes.White : Brushes.Coral;
+            error.Visibility = addressValid ? Visibility.Hidden : Visibility.Visible;
+
+            emailValid = string.IsNullOrWhiteSpace(email.Text) || email.Text == email.Tag.ToString() ? false : true;
+            email.Background = emailValid ? Brushes.White : Brushes.Coral;
+            error.Visibility = emailValid ? Visibility.Hidden : Visibility.Visible;
+
+            phoneValid = string.IsNullOrWhiteSpace(number.Text) || number.Text == number.Tag.ToString() ? false : ValidateDigit(number.Text, number.MaxLength);
+            number.Background = phoneValid ? Brushes.White : Brushes.Coral;
+            error.Visibility = emailValid ? Visibility.Hidden : Visibility.Visible;
+
+
             if (string.IsNullOrWhiteSpace(month.Text) || month.Text == month.Tag.ToString())
             {
                 dobValid = false;
@@ -181,39 +142,21 @@ namespace StudentApp
                 dobValid = true;
                 year.Background = Brushes.White;
             }
-            if (string.IsNullOrWhiteSpace(gender.Text) || gender.Text == gender.Tag.ToString())
-            {
-                genderValid = false;
-                gender.Background = Brushes.Coral;
-                error.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                genderValid = true;
-                gender.Background = Brushes.White;
-            }
-            if (string.IsNullOrWhiteSpace(race.Text) || race.Text == race.Tag.ToString())
-            {
-                raceValid = false;
-                race.Background = Brushes.Coral;
-                error.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                raceValid = true;
-                race.Background = Brushes.White;
-            }
-            if (string.IsNullOrWhiteSpace(Disabilites.Text) || Disabilites.Text == Disabilites.Tag.ToString())
-            {
-                disablitiesValid = false;
-                Disabilites.Background = Brushes.Coral;
-                error.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                disablitiesValid = true;
-                Disabilites.Background = Brushes.White;
-            }
+
+            genderValid = string.IsNullOrWhiteSpace(gender.Text) || gender.Text == gender.Tag.ToString() ? false : ValidateLetter(gender.Text);
+            gender.Background = genderValid ? Brushes.White : Brushes.Coral;
+            error.Visibility = genderValid ? Visibility.Hidden : Visibility.Visible;
+
+
+            raceValid = string.IsNullOrWhiteSpace(race.Text) || race.Text == race.Tag.ToString() ? false : ValidateLetter(race.Text);
+            race.Background = raceValid ? Brushes.White : Brushes.Coral;
+            error.Visibility = raceValid ? Visibility.Hidden : Visibility.Visible;
+
+
+            disablitiesValid = string.IsNullOrWhiteSpace(Disabilites.Text) || Disabilites.Text == Disabilites.Tag.ToString() ? false : ValidateLetter(Disabilites.Text);
+            Disabilites.Background = disablitiesValid ? Brushes.White : Brushes.Coral;
+            error.Visibility = disablitiesValid ? Visibility.Hidden : Visibility.Visible;
+           
 
 
             return (fnValid && lnValid && IdValid && addressValid && emailValid && phoneValid && dobValid && raceValid && disablitiesValid && genderValid);
@@ -230,6 +173,16 @@ namespace StudentApp
                 tb.Text = tb.Tag.ToString();
             }
 
+        }
+
+        private bool ValidateLetter(string test)
+        {
+            return test.Where(x => char.IsLetter(x)).Count() == test.Length;
+        }
+
+        private bool ValidateDigit(string test, int maxLength)
+        {
+            return test.Length == maxLength && test.Where(x => char.IsDigit(x)).Count() == test.Length;
         }
     }
 }
