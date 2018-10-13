@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Serialization;
 
 namespace StudentApp
 {
@@ -20,19 +23,41 @@ namespace StudentApp
     /// </summary>
     public partial class HomePage : Page
     {
+        
+        
         private Educational StudentList = new Educational();
 
+
+       
+        XmlSerializer serializer = new XmlSerializer(typeof(List<Student>));
         public HomePage()
         {
             InitializeComponent();
 
-            if(!Educational.Students.Any())
+            try
             {
-                SearchStudent.IsEnabled = false;
-                DeleteStudent.IsEnabled = false;
-
+                ReadStudentsFromMemory();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("      Unable to read xml file      ", ex.InnerException);
+                MessageBox.Show($"Unable to read xml file\nInner Exception:{ex.InnerException.Message}");
             }
         }
+
+        private void ReadStudentsFromMemory()
+        {
+            string path = "student.xml";
+            if (File.Exists(path))
+            {
+                using (FileStream readStream = new FileStream(path, FileMode.Open, FileAccess.Read))
+                {
+                    Educational.Students = serializer.Deserialize(readStream) as List<Student>;
+                }
+            }
+        }
+
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

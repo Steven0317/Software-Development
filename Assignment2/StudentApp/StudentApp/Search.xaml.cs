@@ -181,7 +181,7 @@ namespace StudentApp
 
             if (string.IsNullOrWhiteSpace(tb.Text))
             {
-                tb.Text = tb.Tag.ToString();
+               
             }
 
         }
@@ -193,6 +193,11 @@ namespace StudentApp
 
             if (FinderBox.Text == "Name")
             {
+                gr.Visibility = Visibility.Hidden;
+                fnln.Visibility = Visibility.Visible;
+                idl.Visibility = Visibility.Hidden;
+                dptl.Visibility = Visibility.Hidden;
+                gpa.Visibility = Visibility.Hidden;
                 NameBox.Visibility = Visibility.Visible;
                 IDBox.Visibility = Visibility.Hidden;
                 GPALow.Visibility = Visibility.Hidden;
@@ -204,6 +209,11 @@ namespace StudentApp
             }
             if (FinderBox.Text == "Student ID")
             {
+                gr.Visibility = Visibility.Hidden;
+                fnln.Visibility = Visibility.Hidden;
+                idl.Visibility = Visibility.Visible;
+                dptl.Visibility = Visibility.Hidden;
+                gpa.Visibility = Visibility.Hidden;
                 NameBox.Visibility = Visibility.Hidden;
                 IDBox.Visibility = Visibility.Visible;
                 GPALow.Visibility = Visibility.Hidden;
@@ -215,6 +225,11 @@ namespace StudentApp
             }
             if(FinderBox.Text == "G.P.A")
             {
+                gr.Visibility = Visibility.Hidden;
+                fnln.Visibility = Visibility.Hidden;
+                idl.Visibility = Visibility.Hidden;
+                dptl.Visibility = Visibility.Hidden;
+                gpa.Visibility = Visibility.Visible;
                 NameBox.Visibility = Visibility.Hidden;
                 IDBox.Visibility = Visibility.Hidden;
                 GPALow.Visibility = Visibility.Visible;
@@ -226,6 +241,11 @@ namespace StudentApp
             }
             if(FinderBox.Text == "Department")
             {
+                gr.Visibility = Visibility.Visible;
+                fnln.Visibility = Visibility.Hidden;
+                idl.Visibility = Visibility.Hidden;
+                dptl.Visibility = Visibility.Visible;
+                gpa.Visibility = Visibility.Hidden;
                 NameBox.Visibility = Visibility.Hidden;
                 IDBox.Visibility = Visibility.Hidden;
                 GPALow.Visibility = Visibility.Hidden;
@@ -236,6 +256,11 @@ namespace StudentApp
             }
             if(FinderBox.Text == "Disabilities")
             {
+                gr.Visibility = Visibility.Hidden;
+                fnln.Visibility = Visibility.Hidden;
+                idl.Visibility = Visibility.Hidden;
+                dptl.Visibility = Visibility.Hidden;
+                gpa.Visibility = Visibility.Hidden;
                 NameBox.Visibility = Visibility.Hidden;
                 IDBox.Visibility = Visibility.Hidden;
                 GPALow.Visibility = Visibility.Hidden;

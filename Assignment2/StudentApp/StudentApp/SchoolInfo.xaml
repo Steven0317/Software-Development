@@ -31,17 +31,27 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <TextBox x:Name="Enrollment" TextAlignment="Center" Grid.ColumnSpan="2" Tag="Enrollment Year" HorizontalAlignment="Stretch" BorderThickness="0,0,0,1" VerticalAlignment="Center" Height="auto"  Grid.Column="2" Grid.Row="2" Background="White"  Opacity="0.75" Text="Enrollment Year" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus" />
+        <Label  HorizontalAlignment="Center" Content="Enrollment Year"  VerticalAlignment="Bottom" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" Visibility="Visible"/>
+        <TextBox x:Name="Enrollment" TextAlignment="Center" Grid.ColumnSpan="2"  HorizontalAlignment="Stretch" BorderThickness="0,0,0,1" VerticalAlignment="Center" Height="auto"  Grid.Column="2" Grid.Row="2" Background="White"  Opacity="0.75"  GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus" />
+        
+        <Label  HorizontalAlignment="Center" Content="Graduation Year"  VerticalAlignment="Bottom" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="1" Visibility="Visible"/>
+        <TextBox x:Name="Graduation" TextAlignment="Center" Grid.ColumnSpan="2"  HorizontalAlignment="Stretch" BorderThickness="0,0,0,1" VerticalAlignment="Center" Height="auto" Grid.Column="5" Grid.Row="2"  Background="White"  Opacity="0.75" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus"/>
+        
+        <Label  HorizontalAlignment="Center" Content="Department"  VerticalAlignment="Top" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="3" Visibility="Visible"/>
+        <ComboBox x:Name="Department" Grid.ColumnSpan="2" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Width="auto">
+            <ComboBoxItem>Civil Engineering</ComboBoxItem>
+            <ComboBoxItem>Chemical Engineering</ComboBoxItem>
+            <ComboBoxItem>Computer Science</ComboBoxItem>
+            <ComboBoxItem>Computer Engineering</ComboBoxItem>
+            <ComboBoxItem>Mechanical Engineering</ComboBoxItem>
+        </ComboBox>
 
-        <TextBox x:Name="Graduation" TextAlignment="Center" Grid.ColumnSpan="2" Tag="Graduation Year" HorizontalAlignment="Stretch" BorderThickness="0,0,0,1" VerticalAlignment="Center" Height="auto" Grid.Column="5" Grid.Row="2" Text="Graduation Year" Background="White"  Opacity="0.75" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus"/>
-
-        <TextBox x:Name="Department" TextAlignment="Center" Grid.ColumnSpan="2" Tag="Department" BorderThickness="0,0,0,1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="auto" Grid.Column="2" Grid.Row="3" Text="Department" Background="White"  Opacity="0.75" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus"/>
-
-        <TextBox x:Name="GPA" TextAlignment="Center" Tag="G.P.A"  BorderThickness="0,0,0,1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="auto" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="3" Text="G.P.A" Background="White"  Opacity="0.75" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus"/>
+        <Label  HorizontalAlignment="Center" Content="G.P.A."  VerticalAlignment="Top" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="3" Visibility="Visible"/>
+        <TextBox x:Name="GPA" TextAlignment="Center"   BorderThickness="0,0,0,1" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="auto" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="3"  Background="White"  Opacity="0.75" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus"/>
 
         <Button x:Name ="Submit_Button"  Content="Submit" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="3"  Height="26" Background="#FF0078D7"  Opacity="0.75" BorderBrush="#FF0078D7" Foreground="White" IsDefault="True" Click="Button_Click" />
 
         <Label x:Name="error" HorizontalAlignment="Center" Content="Please fix the errors in red"  VerticalAlignment="Center" Grid.Column="2" Grid.ColumnSpan="5" Visibility="Hidden"/>
-
+        
     </Grid>
 </Page>

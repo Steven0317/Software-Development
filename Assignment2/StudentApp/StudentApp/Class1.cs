@@ -3,26 +3,53 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace StudentApp
-{
+{   [XmlRoot(ElementName ="Student")]
     public class Student
     {
-
+        [XmlAttribute(DataType ="string")]
         public string FirstName { get; set; }
+
+        [XmlAttribute(DataType ="string")]
         public string LastName { get; set; }
+
+        [XmlAttribute(DataType = "string")]
         public string ID { get; set; }
+
+        [XmlAttribute(DataType = "string")]
         public string Address { get; set; }
+
+        [XmlAttribute(DataType = "string")]
         public string Email { get; set; }
+
+        [XmlAttribute(DataType = "string")]
         public string PhoneNumber { get; set; }
+
+        [XmlAttribute(DataType = "string")]
         public string DOB { get; set; }
+
+        [XmlAttribute(DataType = "string")]
         public string Gender { get; set; }
+
+        [XmlAttribute(DataType = "string")]
         public string Race { get; set; }
+
+        [XmlAttribute(DataType = "string")]
         public string LearningDisabilities { get; set; }
 
+
+        [XmlAttribute(DataType = "double")]
         public double GPA { get; set; }
+
+        [XmlAttribute(DataType = "string")]
         public string Department { get; set; }
+
+        [XmlAttribute(DataType = "int")]
         public int EnrollmentYear { get; set; }
+
+        [XmlAttribute(DataType = "int")]
         public int GraduationDate { get; set; }
 
         public Student()

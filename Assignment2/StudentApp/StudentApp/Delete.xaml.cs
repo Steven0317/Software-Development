@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Serialization;
 
 namespace StudentApp
 {
@@ -21,6 +23,8 @@ namespace StudentApp
     public partial class Delete : Page
     {
         private Educational StudentList = new Educational();
+
+        XmlSerializer serializer = new XmlSerializer(typeof(List<Student>));
 
         public Delete()
         {
@@ -49,7 +53,7 @@ namespace StudentApp
 
             if (string.IsNullOrWhiteSpace(tb.Text))
             {
-                tb.Text = tb.Tag.ToString();
+               
             }
 
         }
@@ -65,6 +69,20 @@ namespace StudentApp
             if (Dstudent != null)
             {
                 Educational.Students.Remove(Dstudent);
+                string path = "student.xml";
+                if (Educational.Students.Count == 0 && File.Exists(path))
+                {
+                    File.Delete(path);
+                }
+                else
+                {
+                    using (FileStream filestream = new FileStream(path, FileMode.Create, FileAccess.ReadWrite))
+                    {
+                        serializer.Serialize(filestream, Educational.Students);
+                    }
+                    
+                }
+
                 MessageBox.Show("Student Deleted");
             }
             else

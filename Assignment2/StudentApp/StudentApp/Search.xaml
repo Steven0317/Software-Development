@@ -40,24 +40,28 @@
             <ComboBoxItem>Disabilities</ComboBoxItem>
         </ComboBox>
 
-       
 
-        <TextBlock  Grid.Row="1" Grid.Column="1" TextWrapping="WrapWithOverflow" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2" Height="auto" Width="auto" Text="Choose a search criteria from the list below"/>
+        
+        <TextBlock  Grid.Row="1" Grid.Column="1" TextWrapping="WrapWithOverflow" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" Height="auto" Width="auto" Text="Choose a search criteria from the list below"/>
 
-        <TextBox x:Name="NameBox" TextAlignment="Center" Grid.ColumnSpan="2" Tag="Name" HorizontalAlignment="Stretch" BorderThickness="0,0,0,1" VerticalAlignment="Center" Height="auto"  Grid.Column="1" Grid.Row="3" Background="White"  Opacity="0.75" Text="Name" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus" Visibility="Hidden"/>
-        
-        <TextBox x:Name="IDBox" TextAlignment="Center" Grid.ColumnSpan="2" Tag="Student ID" HorizontalAlignment="Stretch" BorderThickness="0,0,0,1" VerticalAlignment="Center" Height="auto"  Grid.Column="1" Grid.Row="3" Background="White"  Opacity="0.75" Text="Student ID" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus" Visibility="Hidden"/>
-        
-        <TextBox x:Name="DeptBox" TextAlignment="Center" Grid.ColumnSpan="2" Tag="Department" HorizontalAlignment="Stretch" BorderThickness="0,0,0,1" VerticalAlignment="Center" Height="auto"  Grid.Column="1" Grid.Row="3" Background="White"  Opacity="0.75" Text="Department" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus" Visibility="Hidden"/>
-        
-        
-        <TextBox x:Name="GPALow" TextAlignment="Center"  Tag="GPA Low" HorizontalAlignment="Stretch" BorderThickness="0,0,0,1" VerticalAlignment="Center" Height="auto" Width="auto"  Grid.Column="1" Grid.Row="3" Background="White"  Opacity="0.75" Text="GPA Low" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus" Visibility="Hidden"/>
-        <TextBox x:Name="GPAHigh" TextAlignment="Center"  Tag="GPA High" HorizontalAlignment="Stretch" BorderThickness="0,0,0,1" VerticalAlignment="Center" Height="auto" Width="auto" Grid.Column="2" Grid.Row="3" Background="White"  Opacity="0.75" Text="GPA High" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus" Visibility="Hidden"/>
-        
-        
-        
-        
-        <TextBox x:Name="GRBox" TextAlignment="Center" Grid.ColumnSpan="2" Tag="Gender or Race" HorizontalAlignment="Stretch" BorderThickness="0,0,0,1" VerticalAlignment="Center" Height="auto"  Grid.Column="1" Grid.Row="5" Background="White"  Opacity="0.75" Text="Gender or Race" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus" Visibility="Hidden"/>
+
+        <Label x:Name="fnln" HorizontalAlignment="Center"  Content="First and Last Name"  VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Hidden"/>
+        <TextBox x:Name="NameBox" TextAlignment="Center" Grid.ColumnSpan="2" Tag="Name" HorizontalAlignment="Stretch" BorderThickness="0,0,0,1" VerticalAlignment="Center" Height="auto"  Grid.Column="1" Grid.Row="4" Background="White"  Opacity="0.75"  GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus" Visibility="Hidden"/>
+
+        <Label x:Name="idl" HorizontalAlignment="Center" Content="User ID starting with U including '-'"  VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Hidden"/>
+        <TextBox x:Name="IDBox" TextAlignment="Center" Grid.ColumnSpan="2" Tag="Student ID" HorizontalAlignment="Stretch" BorderThickness="0,0,0,1" VerticalAlignment="Center" Height="auto"  Grid.Column="1" Grid.Row="4" Background="White"  Opacity="0.75"  GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus" Visibility="Hidden"/>
+
+        <Label x:Name="dptl" HorizontalAlignment="Center" Content=" College Department"  VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Hidden"/>
+        <TextBox x:Name="DeptBox" TextAlignment="Center" Grid.ColumnSpan="2" Tag="Department" HorizontalAlignment="Stretch" BorderThickness="0,0,0,1" VerticalAlignment="Center" Height="auto"  Grid.Column="1" Grid.Row="4" Background="White"  Opacity="0.75"  GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus" Visibility="Hidden"/>
+
+        <Label x:Name="gpa" HorizontalAlignment="Center" Content="Upper and Lower GPA Bounds"  VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Hidden"/>
+        <TextBox x:Name="GPALow" TextAlignment="Center"  Tag="GPA Low" HorizontalAlignment="Stretch" BorderThickness="0,0,0,1" VerticalAlignment="Center" Height="auto" Width="auto"  Grid.Column="1" Grid.Row="4" Background="White"  Opacity="0.75" Text="GPA Low" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus" Visibility="Hidden"/>
+        <TextBox x:Name="GPAHigh" TextAlignment="Center"  Tag="GPA High" HorizontalAlignment="Stretch" BorderThickness="0,0,0,1" VerticalAlignment="Center" Height="auto" Width="auto" Grid.Column="2" Grid.Row="4" Background="White"  Opacity="0.75" Text="GPA High" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus" Visibility="Hidden"/>
+
+
+
+        <Label x:Name="gr" HorizontalAlignment="Center" Content="Refine by gender or race"  VerticalAlignment="Center" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Hidden"/>
+        <TextBox x:Name="GRBox" TextAlignment="Center" Grid.ColumnSpan="2" Tag="Gender or Race" HorizontalAlignment="Stretch" BorderThickness="0,0,0,1" VerticalAlignment="Center" Height="auto"  Grid.Column="1" Grid.Row="6" Background="White"  Opacity="0.75"  GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus" Visibility="Hidden"/>
 
         <ListBox x:Name="CollectionBox" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="8" Grid.RowSpan="5" Height="175" VerticalAlignment="Center" Width="300" />
 

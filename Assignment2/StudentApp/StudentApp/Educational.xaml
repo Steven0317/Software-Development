@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:StudentApp"
       mc:Ignorable="d" 
-      d:DesignHeight="800" d:DesignWidth="470"
+      d:DesignHeight="2000" d:DesignWidth="700"
       Title="Personal Information">
 
 
@@ -34,39 +34,43 @@
             </Grid.ColumnDefinitions>
 
 
+        <Label  HorizontalAlignment="Center" Content="First Name"  VerticalAlignment="Top" Grid.Column="2" Grid.ColumnSpan="2"  Grid.Row="1" Visibility="Visible"/>
+        <TextBox x:Name="FNBox" TextAlignment="Center" Grid.ColumnSpan="2"  HorizontalAlignment="Stretch" BorderThickness="0,0,0,1" VerticalAlignment="Center" Height="auto"  Grid.Column="2" Grid.Row="1" Background="White"  Opacity="0.75"  GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus" />
 
-            <TextBox x:Name="FNBox" TextAlignment="Center" Grid.ColumnSpan="2" Tag="First Name" HorizontalAlignment="Stretch" BorderThickness="0,0,0,1" VerticalAlignment="Center" Height="auto"  Grid.Column="2" Grid.Row="1" Background="White"  Opacity="0.75" Text="First Name" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus" />
+        <Label  HorizontalAlignment="Center" Content="Last Name"  VerticalAlignment="Top" Grid.Column="5" Grid.ColumnSpan="2"  Grid.Row="1" Visibility="Visible"/>
+        <TextBox x:Name="LNBox" TextAlignment="Center" Grid.ColumnSpan="2" Tag="Last Name" HorizontalAlignment="Stretch" BorderThickness="0,0,0,1" VerticalAlignment="Center" Height="auto" Grid.Column="5" Grid.Row="1"  Background="White"  Opacity="0.75" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus"/>
 
-            <TextBox x:Name="LNBox" TextAlignment="Center" Grid.ColumnSpan="2" Tag="Last Name" HorizontalAlignment="Stretch" BorderThickness="0,0,0,1" VerticalAlignment="Center" Height="auto" Grid.Column="5" Grid.Row="1" Text="Last Name" Background="White"  Opacity="0.75" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus"/>
+        <Label  HorizontalAlignment="Center" Content="Email Address"  VerticalAlignment="Top" Grid.Column="3" Grid.ColumnSpan="3"  Grid.Row="2" Visibility="Visible"/>
+            <TextBox x:Name="email" TextAlignment="Center" Grid.ColumnSpan="5" Tag="Email Address" BorderThickness="0,0,0,1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="auto" Grid.Column="2" Grid.Row="2"  Background="White"  Opacity="0.75" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus"/>
 
-            <TextBox x:Name="email" TextAlignment="Center" Grid.ColumnSpan="5" Tag="Email Address" BorderThickness="0,0,0,1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="auto" Grid.Column="2" Grid.Row="2" Text="Email Address" Background="White"  Opacity="0.75" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus"/>
-
-            <TextBox x:Name="month" TextAlignment="Center" Tag="Month"  BorderThickness="0,0,0,1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="auto" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="3" Text="Month" Background="White"  Opacity="0.75" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus"/>
-
-
-
-            <TextBox x:Name="day" TextAlignment="Center" Tag="Day"  BorderThickness="0,0,0,1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="auto" Grid.Column="4" Grid.Row="3" Text="Day" Background="White"  Opacity="0.75" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus"/>
-
-            <TextBox x:Name="year" TextAlignment="Center" Grid.ColumnSpan="2" Tag="Year"  BorderThickness="0,0,0,1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="auto" Grid.Column="5" Grid.Row="3" Text="Year" Background="White"  Opacity="0.75" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus"/>
-
-            <TextBox x:Name="gender" TextAlignment="Center" Grid.ColumnSpan="2"  BorderThickness="0,0,0,1"  Tag="Gender" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="auto" Grid.Column="2" Grid.Row="4" Text="Gender" Background="White"  Opacity="0.75" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus"/>
+        <Label HorizontalAlignment="Center" Content="Date of Birth"  VerticalAlignment="Top" Grid.Column="2" Grid.ColumnSpan="2"  Grid.Row="3" Visibility="Visible"/>
+        <DatePicker  Grid.Column ="2" Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Center" x:Name="dob"/>
 
 
-            <TextBox x:Name="race" TextAlignment="Center" Grid.ColumnSpan="2" BorderThickness="0,0,0,1" Tag="Race" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="auto" Grid.Column="5" Grid.Row="4" Text="Race" Background="White"  Opacity="0.75" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus"/>
+        <Label  HorizontalAlignment="Center" Content="Gender"  VerticalAlignment="Top" Grid.Column="5" Grid.ColumnSpan="2"  Grid.Row="3" Visibility="Visible"/>
+        <TextBox x:Name="gender" TextAlignment="Center" Grid.ColumnSpan="2"  BorderThickness="0,0,0,1"  Tag="Gender" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="auto" Grid.Column="5" Grid.Row="3"  Background="White"  Opacity="0.75" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus"/>
+
+        <Label  HorizontalAlignment="Center" Content="Telephone Number"  VerticalAlignment="Top" Grid.Column="2" Grid.ColumnSpan="2"  Grid.Row="4" Visibility="Visible"/>
+        <TextBox x:Name="number" TextAlignment="Center" Grid.ColumnSpan="2" BorderThickness="0,0,0,1" HorizontalAlignment="Stretch" Tag="Telephone Number" VerticalAlignment="Center" Height="auto" Grid.Column="2" Grid.Row="4"   Background="White"  Opacity="0.75" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" LostFocus="LoseFocus"/>
+
+        <Label  HorizontalAlignment="Center" Content="Race"  VerticalAlignment="Top" Grid.Column="5" Grid.ColumnSpan="2"  Grid.Row="4" Visibility="Visible"/>
+        <TextBox x:Name="race" TextAlignment="Center" Grid.ColumnSpan="2" BorderThickness="0,0,0,1" Tag="Race" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="auto" Grid.Column="5" Grid.Row="4"  Background="White"  Opacity="0.75" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus"/>
+
+
+        <Label  HorizontalAlignment="Center" Content="User ID"  VerticalAlignment="Top" Grid.Column="2" Grid.ColumnSpan="2"  Grid.Row="5" Visibility="Visible"/>
+        <TextBox x:Name="uID" TextAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Center" Tag="User ID" BorderThickness="0,0,0,1" Grid.ColumnSpan="2" Height="auto" Grid.Column="2" Grid.Row="5"  Background="White"  Opacity="0.75" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus"/>
+
+
+        <Label  HorizontalAlignment="Center" Content="Learning Disabilities"  VerticalAlignment="Top" Grid.Column="5" Grid.ColumnSpan="2"  Grid.Row="5" Visibility="Visible"/>
+        <TextBox x:Name="Disabilites" TextAlignment="Center" Grid.ColumnSpan="2" BorderThickness="0,0,0,1" Tag="Learning Disabilities" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="auto" Grid.Column="5" Grid.Row="5"  Background="White"  Opacity="0.75" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus"/>
+
+
+        <Label  HorizontalAlignment="Center" Content="Street Address"  VerticalAlignment="Top" Grid.Column="3" Grid.ColumnSpan="3"  Grid.Row="6" Visibility="Visible"/>
+        <TextBox x:Name="address" TextAlignment="Center" Grid.ColumnSpan="5" BorderThickness="0,0,0,1" HorizontalAlignment="Stretch" Tag="Street Address" VerticalAlignment="Center" Height="auto" Grid.Column="2" Grid.Row="6"  Background="White"  Opacity="0.75" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus"/>
 
 
 
-            <TextBox x:Name="uID" TextAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Center" Tag="User ID" BorderThickness="0,0,0,1" Grid.ColumnSpan="2" Height="auto" Grid.Column="2" Grid.Row="5" Text="User ID" Background="White"  Opacity="0.75" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus"/>
-
-            <TextBox x:Name="Disabilites" TextAlignment="Center" Grid.ColumnSpan="2" BorderThickness="0,0,0,1" Tag="Learning Disabilities" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="auto" Grid.Column="5" Grid.Row="5" Text="Learning Disabilities" Background="White"  Opacity="0.75" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus"/>
-
-
-
-            <TextBox x:Name="address" TextAlignment="Center" Grid.ColumnSpan="2" BorderThickness="0,0,0,1" HorizontalAlignment="Stretch" Tag="Street Address" VerticalAlignment="Center" Height="auto" Grid.Column="2" Grid.Row="6" Text="Street Address" Background="White"  Opacity="0.75" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" MouseLeftButtonUp="SelectAll" LostFocus="LoseFocus"/>
-
-
-
-            <TextBox x:Name="number" TextAlignment="Center" Grid.ColumnSpan="2" BorderThickness="0,0,0,1" HorizontalAlignment="Stretch" Tag="Telephone Number" VerticalAlignment="Center" Height="auto" Grid.Column="5" Grid.Row="6" Text="Telephone Number"  Background="White"  Opacity="0.75" GotKeyboardFocus="SelectAll" GotMouseCapture="SelectAll" LostFocus="LoseFocus"/>
+            
 
 
 

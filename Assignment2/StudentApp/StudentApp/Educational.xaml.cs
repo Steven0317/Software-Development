@@ -23,7 +23,7 @@ namespace StudentApp
     {
 
         public static List<Student> Students = new List<Student>();
-        
+        //private HomePage StudentList = new HomePage();
 
         public Educational()
         {
@@ -50,7 +50,7 @@ namespace StudentApp
             if (ValidateAll())
             {
                 Student tempStudent = new Student(FNBox.Text, LNBox.Text, uID.Text, address.Text, email.Text,number.Text,
-                                                  month.Text + ", " + day.Text + ", " + year.Text, gender.Text, race.Text,
+                                                  dob.SelectedDate.ToString(), gender.Text, race.Text,
                                                   Disabilites.Text, 0, "", 0, 0);
 
                 Students.Add(tempStudent);
@@ -82,78 +82,47 @@ namespace StudentApp
 
 
 
-            fnValid = string.IsNullOrWhiteSpace(FNBox.Text) || FNBox.Text == FNBox.Tag.ToString() ? false : ValidateLetter(FNBox.Text);
+            fnValid = string.IsNullOrWhiteSpace(FNBox.Text) ? false : ValidateLetter(FNBox.Text);
             FNBox.Background = fnValid ? Brushes.White : Brushes.Coral;
             error.Visibility = fnValid ? Visibility.Hidden : Visibility.Visible;
 
-            lnValid = string.IsNullOrWhiteSpace(LNBox.Text) || LNBox.Text == LNBox.Tag.ToString() ? false : ValidateLetter(LNBox.Text);
+            lnValid = string.IsNullOrWhiteSpace(LNBox.Text)? false : ValidateLetter(LNBox.Text);
             LNBox.Background = lnValid ? Brushes.White : Brushes.Coral;
             error.Visibility = lnValid ? Visibility.Hidden : Visibility.Visible;
 
 
-            IdValid = string.IsNullOrWhiteSpace(uID.Text) || uID.Text == uID.Tag.ToString() ? false : ValidateDigit(uID.Text,  uID.MaxLength);
+            IdValid = (string.IsNullOrWhiteSpace(uID.Text)) ? false : ValidateDigit(uID.Text,  uID.MaxLength);
             uID.Background = IdValid ? Brushes.White : Brushes.Coral;
             error.Visibility = IdValid ? Visibility.Hidden : Visibility.Visible;
 
 
-            addressValid = (string.IsNullOrWhiteSpace(address.Text) || address.Text == address.Tag.ToString()) ? false : true;
+            addressValid = (string.IsNullOrWhiteSpace(address.Text)) ? false : true;
             address.Background = addressValid ? Brushes.White : Brushes.Coral;
             error.Visibility = addressValid ? Visibility.Hidden : Visibility.Visible;
 
-            emailValid = string.IsNullOrWhiteSpace(email.Text) || email.Text == email.Tag.ToString() ? false : true;
+            emailValid = string.IsNullOrWhiteSpace(email.Text) ? false : true;
             email.Background = emailValid ? Brushes.White : Brushes.Coral;
             error.Visibility = emailValid ? Visibility.Hidden : Visibility.Visible;
 
-            phoneValid = string.IsNullOrWhiteSpace(number.Text) || number.Text == number.Tag.ToString() ? false : ValidateDigit(number.Text, number.MaxLength);
+            phoneValid = string.IsNullOrWhiteSpace(number.Text) ? false : ValidateDigit(number.Text, number.MaxLength);
             number.Background = phoneValid ? Brushes.White : Brushes.Coral;
             error.Visibility = emailValid ? Visibility.Hidden : Visibility.Visible;
 
+            dobValid = dob.SelectedDate == null ? false : true;
+            dob.Background = dobValid ? Brushes.White : Brushes.Coral;
+            error.Visibility = dobValid ? Visibility.Hidden : Visibility.Visible;
 
-            if (string.IsNullOrWhiteSpace(month.Text) || month.Text == month.Tag.ToString())
-            {
-                dobValid = false;
-                month.Background = Brushes.Coral;
-                error.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                dobValid = true;
-                month.Background = Brushes.White;
-            }
-            if (string.IsNullOrWhiteSpace(day.Text) || day.Text == day.Tag.ToString())
-            {
-                dobValid = false;
-                day.Background = Brushes.Coral;
-                error.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                dobValid = true;
-                day.Background = Brushes.White;
-            }
-            if (string.IsNullOrWhiteSpace(year.Text) || year.Text == year.Tag.ToString())
-            {
-                dobValid = false;
-                year.Background = Brushes.Coral;
-                error.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                dobValid = true;
-                year.Background = Brushes.White;
-            }
-
-            genderValid = string.IsNullOrWhiteSpace(gender.Text) || gender.Text == gender.Tag.ToString() ? false : ValidateLetter(gender.Text);
+            genderValid = string.IsNullOrWhiteSpace(gender.Text) ? false : ValidateLetter(gender.Text);
             gender.Background = genderValid ? Brushes.White : Brushes.Coral;
             error.Visibility = genderValid ? Visibility.Hidden : Visibility.Visible;
 
 
-            raceValid = string.IsNullOrWhiteSpace(race.Text) || race.Text == race.Tag.ToString() ? false : ValidateLetter(race.Text);
+            raceValid = string.IsNullOrWhiteSpace(race.Text) ? false : ValidateLetter(race.Text);
             race.Background = raceValid ? Brushes.White : Brushes.Coral;
             error.Visibility = raceValid ? Visibility.Hidden : Visibility.Visible;
 
 
-            disablitiesValid = string.IsNullOrWhiteSpace(Disabilites.Text) || Disabilites.Text == Disabilites.Tag.ToString() ? false : ValidateLetter(Disabilites.Text);
+            disablitiesValid = string.IsNullOrWhiteSpace(Disabilites.Text) ? false : ValidateLetter(Disabilites.Text);
             Disabilites.Background = disablitiesValid ? Brushes.White : Brushes.Coral;
             error.Visibility = disablitiesValid ? Visibility.Hidden : Visibility.Visible;
            
@@ -170,7 +139,7 @@ namespace StudentApp
 
             if (string.IsNullOrWhiteSpace(tb.Text))
             {
-                tb.Text = tb.Tag.ToString();
+               
             }
 
         }
@@ -182,7 +151,12 @@ namespace StudentApp
 
         private bool ValidateDigit(string test, int maxLength)
         {
-            return test.Length == maxLength && test.Where(x => char.IsDigit(x)).Count() == test.Length;
+            return test.All("0123456789-Uu".Contains);
+        }
+
+        public static implicit operator Educational(List<Student> v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -32,12 +32,17 @@
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
+        <Menu DockPanel.Dock="Top" Margin="0,0,10,38" >
+            <MenuItem Header="File">
+                <MenuItem Header="Search" Click="Search_Button"/>
+                <MenuItem Header="Delete" Click="Delete_Button"/>
+            </MenuItem>
+        </Menu>
 
+        <Button x:Name ="AddStudent"  Content="Add Student" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Grid.Column="3" Grid.Row="4" Grid.ColumnSpan="3"  Height="26" Background="#FF0078D7"  Opacity="0.75" BorderBrush="#FF0078D7" Foreground="White" Click="Button_Click" />
 
-        <Button x:Name ="AddStudent"  Content="Add Student" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="3"  Height="26" Background="#FF0078D7"  Opacity="0.75" BorderBrush="#FF0078D7" Foreground="White" Click="Button_Click" />
+        <Button x:Name ="SearchStudent"  Content="Search" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="3"  Height="26" Background="#FF0078D7"  Opacity="0.75" BorderBrush="#FF0078D7" Foreground="White" Click="Search_Button" Visibility="Hidden" />
 
-        <Button x:Name ="SearchStudent"  Content="Search" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="3"  Height="26" Background="#FF0078D7"  Opacity="0.75" BorderBrush="#FF0078D7" Foreground="White" Click="Search_Button" />
-        
-        <Button x:Name ="DeleteStudent"  Content="Delete" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Grid.Column="5" Grid.Row="5" Grid.ColumnSpan="3"  Height="26" Background="#FF0078D7"  Opacity="0.75" BorderBrush="#FF0078D7" Foreground="White"  Click="Delete_Button"   />
+        <Button x:Name ="DeleteStudent"  Content="Delete" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Grid.Column="5" Grid.Row="5" Grid.ColumnSpan="3"  Height="26" Background="#FF0078D7"  Opacity="0.75" BorderBrush="#FF0078D7" Foreground="White"  Click="Delete_Button" Visibility="Hidden"  />
     </Grid>
 </Page>

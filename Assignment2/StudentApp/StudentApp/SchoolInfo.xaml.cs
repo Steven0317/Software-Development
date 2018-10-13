@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Serialization;
 
 namespace StudentApp
 {
@@ -22,6 +24,7 @@ namespace StudentApp
     {
         private Educational StudentList = new Educational();
 
+        XmlSerializer serializer = new XmlSerializer(typeof(List<Student>));
 
         public SchoolInfo()
         {
@@ -79,10 +82,42 @@ namespace StudentApp
                 Educational.Students.Add(tempStudent);
 
                 error.Visibility = Visibility.Hidden;
+
+                string path = "student.xml";
+                if (Educational.Students.Count == 0 && File.Exists(path))
+                {
+                    File.Delete(path);
+                }
+                else
+                {
+                    using (FileStream filestream = new FileStream(path, FileMode.Create, FileAccess.ReadWrite))
+                    {
+                        serializer.Serialize(filestream, Educational.Students);
+                    }
+                    MessageBox.Show("All students have written to file", "Success!!");
+                }
+
                 NavigationService.Navigate(new Uri("HomePage.xaml", UriKind.Relative));
 
             }
 
+        }
+
+        private void WriteCommand(object sender, RoutedEventArgs e)
+        {
+            string path = "student.xml";
+            if (Educational.Students.Count == 0 && File.Exists(path))
+            {
+                File.Delete(path);
+            }
+            else
+            {
+                using (FileStream filestream = new FileStream(path, FileMode.Create, FileAccess.ReadWrite))
+                {
+                    serializer.Serialize(filestream, Educational.Students);
+                }
+                MessageBox.Show("All students have written to file", "Success!!");
+            }
         }
 
         // giant bool statement to check all text boxes
@@ -94,7 +129,7 @@ namespace StudentApp
             bool deptValid;
 
             int Enrollval = -1;
-            if (!int.TryParse(Enrollment.Text, out Enrollval) || Enrollment.Text == Enrollment.Tag.ToString())
+            if (!int.TryParse(Enrollment.Text, out Enrollval))
             {
                 enrollValid = false;
                 Enrollment.Background = Brushes.Coral;
@@ -107,7 +142,7 @@ namespace StudentApp
 
             }
             int GradVal = -1;
-            if (!int.TryParse(Graduation.Text, out GradVal) || Graduation.Text == Graduation.Tag.ToString())
+            if (!int.TryParse(Graduation.Text, out GradVal))
             {
                 gradValid = false;
                 Graduation.Background = Brushes.Coral;
@@ -120,7 +155,7 @@ namespace StudentApp
 
             }
             double gpaVal = -1;
-            if (!double.TryParse(GPA.Text,out gpaVal) || GPA.Text == GPA.Tag.ToString())
+            if (!double.TryParse(GPA.Text,out gpaVal))
             {
                 gpaValid = false;
                 GPA.Background = Brushes.Coral;
@@ -131,7 +166,7 @@ namespace StudentApp
                 gpaValid = true;
                 GPA.Background = Brushes.White;
             }
-            if (string.IsNullOrWhiteSpace(Department.Text) || Department.Text == Department.Tag.ToString())
+            if (Department.SelectedItem == null)
             {
                 deptValid = false;
                 Department.Background = Brushes.Coral;
