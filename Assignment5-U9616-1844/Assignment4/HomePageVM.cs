@@ -24,7 +24,7 @@ namespace Assignment4
             set
             {
                 FilteredList = value;
-                PropertyChanged(this, new PropertyChangedEventArgs("FilteredList"));
+                PropertyChanged(this, new PropertyChangedEventArgs("_FilteredList"));
             }
         }
 
@@ -69,7 +69,7 @@ namespace Assignment4
                 if (_SelectedItemPet == value) return;
                 _SelectedItemPet = value;
                 SelectionEvent(_SelectedItemPet);
-                PropertyChanged(this, new PropertyChangedEventArgs(_SelectedItemPet));
+                PropertyChanged(this, new PropertyChangedEventArgs("SelectedItemPet"));
                 
                 
             }
@@ -83,7 +83,7 @@ namespace Assignment4
             {
                 _SelectedItemSupply = value;
                 SelectionEvent(_SelectedItemSupply);
-                PropertyChanged(this, new PropertyChangedEventArgs("_SelectedItemSupply"));
+                PropertyChanged(this, new PropertyChangedEventArgs("SelectedItemSupply"));
                 
             }
         }
@@ -122,19 +122,33 @@ namespace Assignment4
             if (selectedControl.Header.ToString() == "Pets")
             {   
                 Pets selectedPet = lb.SelectedItem as Pets;
-                selectedPet.Stock -= purchasedAmount;
-                selectedPet.PurchasedAmount = purchasedAmount;
-                CartContents.Add(selectedPet as object);
-                TotalCost += double.Parse(selectedPet.Price.ToString().Replace("$", "")) * purchasedAmount;
+                if (selectedPet.Stock - purchasedAmount >= 0)
+                {
+                    selectedPet.Stock -= purchasedAmount;
+                    selectedPet.PurchasedAmount = purchasedAmount;
+                    CartContents.Add(selectedPet as object);
+                    TotalCost += double.Parse(selectedPet.Price.ToString().Replace("$", "")) * purchasedAmount;
+                }
+                else
+                {
+                    MessageBox.Show("Not enough items in stock to purchase");
+                }
                 
             }
             else
             {
                 Supplies selectedItem = lb.SelectedItem as Supplies;
-                selectedItem.Stock -= purchasedAmount;
-                selectedItem.PurchasedAmount = purchasedAmount;
-                CartContents.Add(selectedItem as object);
-                TotalCost += double.Parse(selectedItem.Price.ToString().Replace("$", "")) * purchasedAmount;
+                if (selectedItem.Stock - purchasedAmount >= 0)
+                {
+                    selectedItem.Stock -= purchasedAmount;
+                    selectedItem.PurchasedAmount = purchasedAmount;
+                    CartContents.Add(selectedItem as object);
+                    TotalCost += double.Parse(selectedItem.Price.ToString().Replace("$", "")) * purchasedAmount;
+                }
+                else
+                {
+                    MessageBox.Show("Not enough items in stock to purchase");
+                }
             }
         }
 

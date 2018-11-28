@@ -32,7 +32,8 @@
             <TextBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding Price}" Width="215" TextWrapping="Wrap"/>
             <TextBlock Text="Image: " Grid.Row="3" HorizontalAlignment="Left"/>
             <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1">
-                <Button Content="Select Image" Width="215" Height="25" Command="{Binding SelectImageCommand}" />
+                <TextBox Text="{Binding ImagePath, Mode=OneWay}" Width="200" MaxHeight="25" IsReadOnly="True"/>
+                <Button Content="..." Width="15" Height="25" Command="{Binding SelectImageCommand}" />
             </StackPanel>
             <TextBlock Text="Pet Type: " Grid.Row="4" HorizontalAlignment="Left"/>
             <ComboBox SelectedValuePath="Content" SelectedValue="{Binding PetType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="4" Grid.Column="1" Width="215" HorizontalAlignment="Left">

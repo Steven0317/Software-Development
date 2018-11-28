@@ -13,6 +13,7 @@ namespace Assignment4
     public class ShoppingCartVM : INotifyPropertyChanged
     {
         public HomePageVM Parent { get; set; }
+        
         public ShoppingCartVM(HomePageVM parent) { Parent = parent; }
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
@@ -79,18 +80,40 @@ namespace Assignment4
 
         public void PlaceOrderClicked(object obj)
         {
-            PetDisplayVM pets = new PetDisplayVM();
+            
 
-            foreach (Pets cartObject in Parent.CartContents)
+            foreach (Object cartObject in Parent.CartContents)
             {
-               
 
-                foreach(Pets totalCollection in pets._PetsCollection)
+
+                if (cartObject is Pets)
                 {
-                    if (cartObject.Name == totalCollection.Name)
+                    Pets pet = cartObject as Pets;
+                        int difference = pet.Stock - pet.PurchasedAmount;
+                        if (difference >= 0)
+                        {
+                            pet.Stock -= pet.PurchasedAmount;
+
+                        }
+                        else
+                        {
+                            MessageBox.Show(string.Format("Not enough items in stock to purchase, Total Items for purchase: {0}", pet.Stock));
+                        }
+                    
+                }
+                else if(cartObject is Supplies)
+                {
+                    Supplies supply = cartObject as Supplies;
+                     int difference = supply.Stock - supply.PurchasedAmount;
+                    if(difference >= 0)
                     {
-                        totalCollection.Stock -= cartObject.PurchasedAmount;
+                        supply.Stock -= supply.PurchasedAmount;
                     }
+                    else
+                    {
+                        MessageBox.Show(string.Format("Not enough items in stock to purchase, Total Items for purchase: {0}", supply.Stock));
+                    }
+
                 }
             }
 

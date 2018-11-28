@@ -23,7 +23,7 @@ namespace Assignment4
             set
             {
                 _Name = value;
-                PropertyChanged(this, new PropertyChangedEventArgs("_Name"));
+                PropertyChanged(this, new PropertyChangedEventArgs("Name"));
             }
         }
 
@@ -36,7 +36,7 @@ namespace Assignment4
             set
             {
                 _Stock = value;
-                PropertyChanged(this, new PropertyChangedEventArgs("_Stock"));
+                PropertyChanged(this, new PropertyChangedEventArgs("Stock"));
             }
         }
 
@@ -48,7 +48,7 @@ namespace Assignment4
             set
             {
                 _Price = value;
-                PropertyChanged(this, new PropertyChangedEventArgs("_Price"));
+                PropertyChanged(this, new PropertyChangedEventArgs("Price"));
             }
         }
 
@@ -60,7 +60,7 @@ namespace Assignment4
             set
             {
                 _ImagePath = value;
-                PropertyChanged(this, new PropertyChangedEventArgs("_ImagePath"));
+                PropertyChanged(this, new PropertyChangedEventArgs("ImagePath"));
             }
         }
 
