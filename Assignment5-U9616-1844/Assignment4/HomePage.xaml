@@ -1,0 +1,81 @@
+﻿<Page x:Class="Assignment4.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Assignment4"
+      mc:Ignorable="d" 
+      d:DesignHeight="950" d:DesignWidth="800"
+      Title="HomePage">
+
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+
+
+
+
+        <StackPanel HorizontalAlignment="Center">
+            <TextBlock/>
+            <TextBlock/>
+            <DockPanel>
+                <Menu DockPanel.Dock="Top">
+                    <MenuItem Header="_File">
+
+                        <MenuItem Header="_Help File" Click="MenuItem_Click"    />
+                        <MenuItem Header="_Close"/>
+                        <MenuItem Header="Logout" Click="LogoutEvent"/>
+                    </MenuItem>
+                    <MenuItem Header=""/>
+                    <MenuItem Header=""/>
+                    <MenuItem Header=""/>
+                    <MenuItem Header="{Binding UserName}"/>
+                    <MenuItem Header=""/>
+                    <MenuItem Header=""/>
+                    <MenuItem Header=""/>
+                    <MenuItem Header="$"/>
+                    <MenuItem Header="{Binding TotalCostDisplay}"/>
+                    
+                </Menu>
+            </DockPanel>
+
+
+
+
+            <TextBlock x:Name="welcome" Text =" Welcome to Pets R Us, " FontSize="22" FontWeight="DemiBold"/>
+
+            <TabControl x:Name="Tab" SelectedItem="{Binding selectedControl, Mode=OneWayToSource}">
+                <TabItem Header="Pets">
+                <local:PetDisplay />
+                </TabItem>
+                <TabItem Header="Supplies">
+                    <local:SupplyDisplay/>
+                </TabItem>
+            </TabControl>
+        
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                <Label Content="Quantity" Height="25" Margin="5"/>
+                <TextBox Text="{Binding Quantity}" Height="25" Width="50" Margin="5"/>
+                <Button Height="25" Width="100" Content="Add To Cart" Margin="5" Command="{Binding AddToCartCommand}" />
+                <Button Height="25" Width="100" Content="Review Order"  Command="{Binding OpenCartCommand}"/>
+            </StackPanel>
+            <TextBlock Text="Filter Results" HorizontalAlignment="Center"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <ComboBox x:Name="pet"  Height="25" Width="125" SelectedValuePath="Content" SelectedValue="{Binding SelectedItemPet, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
+                    <ComboBoxItem>Pets with Feet</ComboBoxItem>
+                    <ComboBoxItem>Pets with Fins</ComboBoxItem>
+                </ComboBox>
+                <ComboBox x:Name="supply"  Height="25" Width="125" SelectedValuePath="Content" SelectedValue="{Binding SelectedItemSupply, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
+                    <ComboBoxItem>Bedding</ComboBoxItem>
+                    <ComboBoxItem>Clothes</ComboBoxItem>
+                    <ComboBoxItem>Food</ComboBoxItem>
+                </ComboBox>
+                
+            </StackPanel>
+            <TextBlock Text=""/>
+            <TextBlock Text=""/>
+            <TextBlock Text=""/>
+            <TextBlock Text=""/>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
